@@ -27,7 +27,7 @@ const Navbar = () => {
              ${hasScrolled200vh ? 'justify-between' : "justify-center"}
             `}
             style={{
-                boxShadow: hasScrolled100vh && !hasScrolled200vh && "inset 0px 0px 15px rgba(0,0,0,0.2)"
+                boxShadow: hasScrolled100vh && !hasScrolled200vh && "inset 0px -10px 15px -10px rgba(0,0,0,0.2)"
             }}
         >
             <div className={`flex items-center  transition-all duration-700  overflow-hidden    ${hasScrolled200vh ? 'md:w-0 w-full' : 'md:w-1/2 w-full'}`}>
