@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ssscribe from '../assets/images/ssscribble-3.svg'
+import ddynamite from '../assets/images/dddynamite.svg'
 import { navItems } from '../constants'
 import { NavLink } from 'react-router-dom'
 import { CiMenuFries } from "react-icons/ci";
@@ -31,9 +31,9 @@ const Navbar = () => {
             }}
         >
             <div className={`flex items-center  transition-all duration-700  overflow-hidden    ${hasScrolled200vh ? 'md:w-0 w-full' : 'md:w-1/2 w-full'}`}>
-                <img src={ssscribe} alt="" className={`transition-all duration-300 
-                    ${hasScrolled100vh ? 'w-[80px] h-[80px]' : 'w-[120px] h-[120px]'}`} />
-                <h1 className={`transition-all duration-300 ${hasScrolled100vh ? 'text-md' : 'text-2xl'}`}>SHOMYN.Inc</h1>
+                <img src={ddynamite} alt="" className={`transition-all duration-300 
+                    ${hasScrolled100vh ? 'w-[80px] h-[80px]' : 'w-[100px] h-[100px]'}`} />
+                <h1 className={`transition-all duration-300 ${hasScrolled100vh ? 'text-md ' : 'text-xl'}`}>SHOMYN.Inc</h1>
             </div>
             <div className={`transition-all md:flex hidden
                  duration-300  gap-4 items-center overflow-hidden text-nowrap 
