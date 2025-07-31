@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Notfound from './pages/Notfound'
+import Products from './pages/Products'
 const App = () => {
   return (
     <>
@@ -10,6 +11,7 @@ const App = () => {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<Home />} />
+          <Route path='/product' element={<Products />} />
 
           <Route path='/*' element={<Notfound />} />
         </Routes>

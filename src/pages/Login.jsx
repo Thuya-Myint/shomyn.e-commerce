@@ -9,12 +9,19 @@ const Login = () => {
     const [rememberMe, setRememberMe] = useState(false)
     const [login, setLogin] = useState(false)
 
+
     return (
         // main div
         <div className='w-screen h-screen bg-login flex overflow-hidden  justify-center items-center'>
             {/* image and form div */}
 
-            <div className='grid sm:grid-cols-2 grid-cols-1  p-2  rounded-2xl sm:bg-white/30 xl:w-1/2 lg:w-2/3 md:w-[80%] w-[100%]'>
+            <div className='grid sm:grid-cols-2 grid-cols-1  p-2   rounded-2xl
+             sm:bg-white/30
+              xl:w-1/2 
+             lg:w-2/3
+              md:w-[80%]
+               w-[100%]
+                '>
                 {/* image div */}
                 <div className='sm:block rounded-l-xl bg-shopNow  hidden '>
 
@@ -38,7 +45,7 @@ const Login = () => {
                             onChange={(e) => setUsername(e.target.value)}
                             autoFocus
                             placeholder='Username'
-                            className='capitalize p-2 px-8 border-2 w-full transition-all duration-300 placeholder:text-black/30
+                            className='capitalize p-2 px-8 border-2 w-full  transition-all duration-300 placeholder:text-black/30
                              focus:border-slate-400 bg-white/40 focus:bg-slate-100 rounded-md border-slate-200 outline-none'
                         />
                     </div>
