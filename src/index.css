@@ -1,15 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
 .bg-login{
     background: url("./assets/images/blurBgBlueBottomCorner.png") center ;
     background-size: cover;
 }
-.bg-banner{
+/* .bg-banner{
     background: url("./assets/images/ooorganize-2.svg") center ;
     background-size: cover;
-}
+} */
 .bg-shopNow{
     background:url("./assets/images/shopNow.jpg") center;
      background-size: cover;

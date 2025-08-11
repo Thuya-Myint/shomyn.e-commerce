@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import ddynamite from '../assets/images/dddynamite.svg'
+import shomynLogo from '../assets/images/logos/shomynLogo.png'
 import { navItems } from '../constants'
 import { NavLink } from 'react-router-dom'
 import { CiMenuFries } from "react-icons/ci";
-import { SiOnlyoffice } from "react-icons/si";
 const Navbar = () => {
     const [hasScrolled100vh, setHasScrolled100vh] = useState(false)
     const [hasScrolled200vh, setHasScrolled200vh] = useState(false)
@@ -22,7 +21,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav className={`transition-all duration-700 quicksand w-full fixed z-[100] flex items-center justify-between
+        <nav className={`transition-all duration-700 quicksand  w-full fixed z-[100]  flex items-center justify-between
             ${hasScrolled100vh ? 'md:px-6 px-2' : 'md:px-10 px-4'}
              ${hasScrolled200vh ? 'justify-between' : "justify-center"}
             `}
@@ -30,18 +29,21 @@ const Navbar = () => {
                 boxShadow: hasScrolled100vh && !hasScrolled200vh && "inset 0px -10px 15px -10px rgba(0,0,0,0.2)"
             }}
         >
-            <div className={`flex items-center  transition-all duration-700  overflow-hidden    ${hasScrolled200vh ? 'md:w-0 w-full' : 'md:w-1/2 w-full'}`}>
-                <img src={ddynamite} alt="" className={`transition-all duration-300 
-                    ${hasScrolled100vh ? 'w-[80px] h-[80px]' : 'w-[100px] h-[100px]'}`} />
-                <h1 className={`transition-all duration-300 ${hasScrolled100vh ? 'text-md ' : 'text-xl'}`}>SHOMYN.Inc</h1>
+            <div className={`flex items-center  transition-all duration-700  overflow-hidden  ${hasScrolled200vh ? 'md:w-0 w-full' : 'md:w-full w-full'}`}>
+                <img src={shomynLogo} alt="" className={`transition-all  duration-300 
+                    ${hasScrolled100vh ? 'w-[60px] h-[60px]' : 'w-[60px] h-[60px]'}`} />
+                <h1 className={`transition-all duration-300 font-bold  ${hasScrolled100vh ? 'text-md ' : 'text-xl text-white'}`}>
+                    <div>Shomyn</div>
+                    <div className='text-sm text-end'>horizon</div>
+                </h1>
             </div>
             <div className={`transition-all md:flex hidden
-                 duration-300  gap-4 items-center overflow-hidden text-nowrap 
+                 duration-500  gap-4  items-center overflow-hidden text-nowrap 
                  ${hasScrolled100vh ?
                     hasScrolled200vh ?
                         'w-fit m-auto  p-2 justify-center rounded-full'
                         :
-                        'w-96 justify-end'
+                        'w-[40%] justify-end'
                     :
                     'w-0'
                 } 
@@ -70,16 +72,17 @@ const Navbar = () => {
             {/* for mobile */}
             {
                 window.innerWidth < 768 &&
-                <CiMenuFries className='transition-all z-[9999] duration-300 text-[3rem] p-2 cursor-pointer rounded-xl active:opacity-50 active:bg-black/20 '
+                <CiMenuFries className='transition-all bg-white/50 blurr z-[9999] duration-300 text-5xl p-2 cursor-pointer rounded-xl active:opacity-50 active:bg-black/20 '
                     onClick={() => setIsSideBarOpen(!isSideBarOpen)}
                 />
             }
             {window.innerWidth < 768 && (
                 <div className={`absolute transition-all duration-700 top-0 right-0 h-screen overflow-hidden  ${isSideBarOpen ? 'w-[80%] p-4 ' : 'w-[0%]'}  bg-white z-[100] shadow-md shadow-black/20`}>
 
-                    <h1 className={`transition-all text-2xl mt-4 flex items-baseline gap-2 ${isSideBarOpen ? 'opacity-100 duration-[2000ms] ' : 'opacity-0 duration-150'}`}>
-                        <SiOnlyoffice className='text-gray-200' />Shomyn
-                    </h1>
+                    <div className={`transition-all  mt-10 flex items-center text-lg  gap-2 ${isSideBarOpen ? 'opacity-100 duration-[2000ms] ' : 'opacity-0 duration-150'}`}>
+                        <img src={shomynLogo} alt="" className='w-10' />
+                        <h1>Shomyn Horizon</h1>
+                    </div>
                     <div className='flex flex-col gap-2 mt-10'>
                         {
                             navItems.map((nav, index) =>
