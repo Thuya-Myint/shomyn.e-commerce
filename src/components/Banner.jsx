@@ -47,7 +47,7 @@ export default function Banner() {
 
     if (!isLoaded) {
         return (
-            <div className="w-full h-screen flex items-center justify-center bg-black text-white">
+            <div className="w-full h-screen flex items-center justify-center bg-white text-black">
                 <p>Loading banners...</p>
             </div>
         );
@@ -56,7 +56,7 @@ export default function Banner() {
     const currentBanner = bannerItems[outerIndex];
 
     return (
-        <div className="relative w-full h-screen md:h-[80vh] sm:h-[60vh] quicksand overflow-hidden bg-black text-white">
+        <div className="relative w-full h-screen  quicksand overflow-hidden bg-black text-white">
             {/* Inner image carousel */}
             <img
                 src={currentBanner.img[innerIndex]}
