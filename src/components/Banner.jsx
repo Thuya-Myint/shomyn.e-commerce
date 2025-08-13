@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { bannerItems } from "../constants"; // Your array
 
 export default function Banner() {
@@ -72,18 +73,18 @@ export default function Banner() {
                 <p className="text-sm sm:text-base md:text-lg mb-1">{currentBanner.textBody}</p>
                 <p className="text-xs sm:text-sm opacity-80 mb-4">{currentBanner.textSubBody}</p>
                 <div className="flex flex-wrap gap-3 justify-center">
-                    <a
-                        href={currentBanner.ctaPath}
+                    <Link
+                        to={currentBanner.ctaPath}
                         className="bg-blue-500 hover:bg-blue-600 px-4 sm:px-5 py-2 rounded-full font-semibold text-sm sm:text-base"
                     >
                         {currentBanner.ctaButton1}
-                    </a>
-                    <a
-                        href={currentBanner.ctaPath}
+                    </Link>
+                    <Link
+                        to={currentBanner.ctaPath}
                         className="bg-white text-black hover:bg-gray-200 px-4 sm:px-5 py-2 rounded-full font-semibold text-sm sm:text-base"
                     >
                         {currentBanner.ctaButton2}
-                    </a>
+                    </Link>
                 </div>
             </div>
 
