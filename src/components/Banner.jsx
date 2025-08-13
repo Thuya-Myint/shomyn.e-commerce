@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { FaPlane, FaHotel, FaBus, FaMapMarkedAlt } from "react-icons/fa"; // icons
 import { bannerItems } from "../constants";
 
 export default function Banner() {
-    const [isLoaded, setIsLoaded] = useState(false); // Wait until all images are loaded
+    const [isLoaded, setIsLoaded] = useState(false);
     const containerRef = useRef(null);
-    const currentIndexRef = useRef(0); // Track current vertical section
+    const [currentSection, setCurrentSection] = useState(0); // current active section
 
     // Preload all images
     useEffect(() => {
@@ -22,21 +23,18 @@ export default function Banner() {
         });
     }, []);
 
-    // Auto-scroll per screen height
-    // useEffect(() => {
-    //     if (!isLoaded) return;
-    //     const total = bannerItems.length;
+    // Track current section on scroll
+    const handleScroll = (e) => {
+        const index = Math.round(e.target.scrollTop / window.innerHeight);
+        setCurrentSection(index);
+    };
 
-    //     const interval = setInterval(() => {
-    //         currentIndexRef.current = (currentIndexRef.current + 1) % total;
-    //         containerRef.current.scrollTo({
-    //             top: currentIndexRef.current * window.innerHeight,
-    //             behavior: "smooth",
-    //         });
-    //     }, 5000); // change every 5s
-
-    //     return () => clearInterval(interval);
-    // }, [isLoaded]);
+    const iconMap = {
+        flight: <FaPlane className="w-6 h-6 text-white" />,
+        hotel: <FaHotel className="w-6 h-6 text-white" />,
+        bus: <FaBus className="w-6 h-6 text-white" />,
+        tour: <FaMapMarkedAlt className="w-6 h-6 text-white" />,
+    };
 
     if (!isLoaded) {
         return (
@@ -49,7 +47,8 @@ export default function Banner() {
     return (
         <div
             ref={containerRef}
-            className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory"
+            className="h-screen overflow-y-scroll scroll-smooth snap-y snap-mandatory scrollbar-hide"
+            onScroll={handleScroll}
         >
             {bannerItems.map((item, i) => (
                 <div
@@ -63,7 +62,7 @@ export default function Banner() {
                     ></div>
 
                     {/* Overlay text */}
-                    <div className="relative z-0 text-center px-4 flex flex-col gap-3 items-center justify-center">
+                    <div className="relative z-10 text-center px-4 flex flex-col gap-3 items-center justify-center">
                         <h2 className="text-3xl md:text-5xl font-bold mb-2">{item.textHeader}</h2>
                         <p className="text-base md:text-lg mb-1">{item.textBody}</p>
                         <p className="text-sm opacity-80 mb-4">{item.textSubBody}</p>
@@ -83,15 +82,9 @@ export default function Banner() {
                         </div>
                     </div>
 
-                    {/* Optional section indicator */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                        {bannerItems.map((_, idx) => (
-                            <div
-                                key={idx}
-                                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${idx === i ? "bg-white" : "bg-gray-400"
-                                    }`}
-                            />
-                        ))}
+                    {/* Section icon indicator */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+                        {iconMap[bannerItems[currentSection]?.type]}
                     </div>
                 </div>
             ))}

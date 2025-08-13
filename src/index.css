@@ -4,6 +4,15 @@
     user-select: none;
     -webkit-user-select:none
 }
+/* Tailwind-compatible scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .bg-login{
     background: url("./assets/images/blurBgBlueBottomCorner.png") center ;
     background-size: cover;

@@ -10,6 +10,7 @@ import tour2 from './assets/images/banner/tour2.jpg'
 export const bannerItems = [
     {
         id: "bi01",
+        type: "flight",
         img: [airplane1, airplane2],
         textHeader: "Fly to Your Dream Destination",
         textBody: "Seamless booking, unbeatable fares, and flights to over 100+ countries.",
@@ -20,6 +21,7 @@ export const bannerItems = [
     },
     {
         id: "bi02",
+        type: "hotel",
         img: [hotel1, hotel2],
         textHeader: "Stay in Comfort, Anywhere",
         textBody: "From budget-friendly stays to 5-star luxury, find the perfect room for your trip.",
@@ -30,6 +32,7 @@ export const bannerItems = [
     },
     {
         id: "bi03",
+        type: "bus",
         img: [bus1, bus2],
         textHeader: "Travel Smart by Bus",
         textBody: "Affordable and convenient bus routes connecting major cities and towns.",
@@ -40,6 +43,7 @@ export const bannerItems = [
     },
     {
         id: "bi04",
+        type: "tour",
         img: [tour1, tour2],
         textHeader: "Explore with Guided Tours",
         textBody: "Curated experiences with local guides to make your trip unforgettable.",
