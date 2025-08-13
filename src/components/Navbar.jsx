@@ -21,7 +21,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav className={`transition-all duration-700 quicksand  w-full h-[100px] fixed z-[100]  flex items-center justify-between
+        <nav className={`transition-all duration-700 quicksand  w-full md:h-[80px] h-[120px] fixed z-[100]  flex items-center justify-between
             ${hasScrolled100vh ? 'md:px-6 px-2' : 'md:px-10 px-4'}
              ${hasScrolled200vh ? 'justify-between' : "justify-center"}
             `}
