@@ -23,20 +23,20 @@ export default function Banner() {
     }, []);
 
     // Auto-scroll per screen height
-    useEffect(() => {
-        if (!isLoaded) return;
-        const total = bannerItems.length;
+    // useEffect(() => {
+    //     if (!isLoaded) return;
+    //     const total = bannerItems.length;
 
-        const interval = setInterval(() => {
-            currentIndexRef.current = (currentIndexRef.current + 1) % total;
-            containerRef.current.scrollTo({
-                top: currentIndexRef.current * window.innerHeight,
-                behavior: "smooth",
-            });
-        }, 5000); // change every 5s
+    //     const interval = setInterval(() => {
+    //         currentIndexRef.current = (currentIndexRef.current + 1) % total;
+    //         containerRef.current.scrollTo({
+    //             top: currentIndexRef.current * window.innerHeight,
+    //             behavior: "smooth",
+    //         });
+    //     }, 5000); // change every 5s
 
-        return () => clearInterval(interval);
-    }, [isLoaded]);
+    //     return () => clearInterval(interval);
+    // }, [isLoaded]);
 
     if (!isLoaded) {
         return (
