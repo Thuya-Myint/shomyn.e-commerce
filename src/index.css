@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+*{
+    user-select: none;
+    -webkit-user-select:none
+}
 .bg-login{
     background: url("./assets/images/blurBgBlueBottomCorner.png") center ;
     background-size: cover;

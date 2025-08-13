@@ -21,7 +21,7 @@ const Navbar = () => {
     }, [])
 
     return (
-        <nav className={`transition-all duration-700 quicksand  w-full md:h-[80px] h-[120px] fixed z-[100]  flex items-center justify-between
+        <nav className={`transition-all duration-700 quicksand   w-full md:h-[80px] h-[120px] fixed z-[100] md:pt-0 pt-4  flex items-center  justify-between
             ${hasScrolled100vh ? 'md:px-6 px-2' : 'md:px-10 px-4'}
              ${hasScrolled200vh ? 'justify-between' : "justify-center"}
             `}
@@ -77,7 +77,7 @@ const Navbar = () => {
                 />
             }
             {window.innerWidth < 768 && (
-                <div className={`absolute transition-all duration-700 top-0 right-0 h-screen overflow-hidden  ${isSideBarOpen ? 'w-[80%] p-4 ' : 'w-[0%]'}  bg-white z-[100] shadow-md shadow-black/20`}>
+                <div className={`absolute transition-all duration-700  top-0 right-0 h-screen overflow-hidden  ${isSideBarOpen ? 'w-[80%] p-4 ' : 'w-[0%]'}  bg-white z-[999] shadow-md shadow-black/20`}>
 
                     <div className={`transition-all  mt-10 flex items-center text-lg  gap-2 ${isSideBarOpen ? 'opacity-100 duration-[2000ms] ' : 'opacity-0 duration-150'}`}>
                         <img src={shomynLogo} alt="" className='w-10' />

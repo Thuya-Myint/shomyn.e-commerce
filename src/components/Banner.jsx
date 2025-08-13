@@ -63,7 +63,7 @@ export default function Banner() {
                     ></div>
 
                     {/* Overlay text */}
-                    <div className="relative z-10 text-center px-4 flex flex-col gap-3 items-center justify-center">
+                    <div className="relative z-0 text-center px-4 flex flex-col gap-3 items-center justify-center">
                         <h2 className="text-3xl md:text-5xl font-bold mb-2">{item.textHeader}</h2>
                         <p className="text-base md:text-lg mb-1">{item.textBody}</p>
                         <p className="text-sm opacity-80 mb-4">{item.textSubBody}</p>
